@@ -7,7 +7,7 @@ const HomeView = () => {
   return (
     <Container className="container">
       <header className="header">
-        <h1>Rick & Morty App</h1>
+        <h1 data-testid="test-id">Rick & Morty App</h1>
       </header>
       <NavigationComp />
       <Card style={{ textAlign: "center", borderColor: "white" }}>
