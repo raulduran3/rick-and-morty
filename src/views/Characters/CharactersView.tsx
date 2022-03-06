@@ -7,6 +7,7 @@ import Container from "react-bootstrap/Container";
 import LoadingComp from "../../components/Loading";
 import { CharactersData, CharactersVars } from "../../types/CharacterType";
 import { Info } from "../../types/PaginationType";
+import { TableHeaderType } from "../../types/TableType";
 import { GET_CHARACTERS } from "../../gql/Characters/getCharacters";
 import "../../style/style.css";
 
@@ -19,7 +20,13 @@ const CharactersView = () => {
     }
   );
   const info = data?.characters.info as Info;
-  const header: string[] = ["Name", "Species", "Origin", "Location", "Actions"];
+  const header: TableHeaderType[] = [
+    { name: "Name", id: 1 },
+    { name: "Species", id: 2 },
+    { name: "Origin", id: 3 },
+    { name: "Location", id: 4 },
+    { name: "Actions", id: 5 },
+  ];
   return (
     <>
       <Container fluid className="container">

@@ -8,6 +8,7 @@ import Container from "react-bootstrap/Container";
 import { GET_LOCATIONS } from "../../gql/Locations/getLocations";
 import { LocationsData, LocationsVars } from "../../types/LocationType";
 import { Info } from "../../types/PaginationType";
+import { TableHeaderType } from "../../types/TableType";
 
 function LocationsView() {
   const [page, setPage] = useState<number>(1);
@@ -18,7 +19,12 @@ function LocationsView() {
     }
   );
   const info = data?.locations.info as Info;
-  const header: string[] = ["#", "Name", "Type", "Actions"];
+  const header: TableHeaderType[] = [
+    { name: "#", id: 1 },
+    { name: "Name", id: 2 },
+    { name: "Type", id: 3 },
+    { name: "Actions", id: 4 },
+  ];
   return (
     <>
       <Container fluid className="container">
