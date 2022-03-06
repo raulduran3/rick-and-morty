@@ -5,9 +5,10 @@ import { Link } from "react-router-dom";
 import { LocationsData, Location } from "../types/LocationType";
 import { CharactersData, Character } from "../types/CharacterType";
 import { EpisodesData, Episode } from "../types/EpisodeType";
+import { TableHeaderType } from "../types/TableType";
 
 interface TableProps {
-  headerData: string[];
+  headerData: TableHeaderType[];
   tableCharacterData?: CharactersData;
   tableLocationData?: LocationsData;
   tableEpisodeData?: EpisodesData;
@@ -23,7 +24,7 @@ const TableComp = ({
     <thead>
       <tr>
         {headerData.map((head) => (
-          <th>{head}</th>
+          <th key={head.id}>{head.name}</th>
         ))}
       </tr>
     </thead>
