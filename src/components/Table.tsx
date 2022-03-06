@@ -36,14 +36,16 @@ const TableComp = ({
             <td>{character.species}</td>
             <td>{character.origin.name}</td>
             <td>{character.location.name}</td>
-            <Link
-              to="/character"
-              state={{
-                from: { id: character.id, type: "character" },
-              }}
-            >
-              <Button variant="light">View</Button>
-            </Link>
+            <td>
+              <Link
+                to="/character"
+                state={{
+                  from: { id: character.id, type: "character" },
+                }}
+              >
+                <Button variant="light">View</Button>
+              </Link>
+            </td>
           </tr>
         ))}
       {tableLocationData &&
@@ -52,14 +54,16 @@ const TableComp = ({
             <td>{location.id}</td>
             <td>{location.name}</td>
             <td>{location.type}</td>
-            <Link
-              to="/location"
-              state={{
-                from: { id: location.id, type: "location" },
-              }}
-            >
-              <Button variant="light">View</Button>
-            </Link>
+            <td>
+              <Link
+                to="/location"
+                state={{
+                  from: { id: location.id, type: "location" },
+                }}
+              >
+                <Button variant="light">View</Button>
+              </Link>
+            </td>
           </tr>
         ))}
       {tableEpisodeData &&
@@ -68,14 +72,16 @@ const TableComp = ({
             <td>{episode.id}</td>
             <td>{episode.name}</td>
             <td>{episode.air_date}</td>
-            <Link
-              to="/episode"
-              state={{
-                from: { id: episode.id, type: "episode" },
-              }}
-            >
-              <Button variant="light">View</Button>
-            </Link>
+            <td>
+              <Link
+                to="/episode"
+                state={{
+                  from: { id: episode.id, type: "episode" },
+                }}
+              >
+                <Button variant="light">View</Button>
+              </Link>
+            </td>
           </tr>
         ))}
     </tbody>
