@@ -117,8 +117,9 @@ const CharacterView = () => {
                           from: { id: episode.id, type: "episode" },
                         }}
                         style={{ textDecoration: "none" }}
+                        key={episode.id}
                       >
-                        <ListGroup.Item>{episode.name}</ListGroup.Item>
+                        <ListGroup.Item action>{episode.name}</ListGroup.Item>
                       </Link>
                     ))
                   : null}

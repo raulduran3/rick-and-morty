@@ -64,6 +64,7 @@ const EpisodeView = () => {
                           from: { id: character.id, type: "character" },
                         }}
                         style={{ textDecoration: "none" }}
+                        key={character.id}
                       >
                         <ListGroup.Item action>{character.name}</ListGroup.Item>
                       </Link>
