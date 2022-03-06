@@ -36,7 +36,7 @@ const LocationView = () => {
             <CardGroup>
               <Card>
                 <Card.Title>Location Name</Card.Title>
-                <Card.Body>{locationData.name}</Card.Body>
+                <Card.Body id={"test"}>{locationData.name}</Card.Body>
               </Card>
               <Card>
                 <Card.Title>Type</Card.Title>

@@ -36,7 +36,7 @@ const EpisodeView = () => {
             <CardGroup>
               <Card>
                 <Card.Title>Episode Title</Card.Title>
-                <Card.Body>
+                <Card.Body id="test">
                   #{episode.id} {episode.name}
                 </Card.Body>
               </Card>

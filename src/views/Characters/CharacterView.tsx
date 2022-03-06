@@ -42,7 +42,7 @@ const CharacterView = () => {
             <CardGroup>
               <Card>
                 <Card.Title>Character Name</Card.Title>
-                <Card.Body>{character.name}</Card.Body>
+                <Card.Body id="test">{character.name}</Card.Body>
               </Card>
               <Card>
                 <Card.Title>Gender</Card.Title>
