@@ -32,7 +32,7 @@ const TableComp = ({
       {tableCharacterData &&
         tableCharacterData.characters.results.map((character: Character) => (
           <tr key={character.id}>
-            <td>{character.name}</td>
+            <td className="character">{character.name}</td>
             <td>{character.species}</td>
             <td>{character.origin.name}</td>
             <td>{character.location.name}</td>
@@ -52,7 +52,7 @@ const TableComp = ({
         tableLocationData.locations.results.map((location: Location) => (
           <tr key={location.id}>
             <td>{location.id}</td>
-            <td>{location.name}</td>
+            <td className="location">{location.name}</td>
             <td>{location.type}</td>
             <td>
               <Link
@@ -70,7 +70,7 @@ const TableComp = ({
         tableEpisodeData.episodes.results.map((episode: Episode) => (
           <tr key={episode.id}>
             <td>{episode.id}</td>
-            <td>{episode.name}</td>
+            <td className="episode">{episode.name}</td>
             <td>{episode.air_date}</td>
             <td>
               <Link
