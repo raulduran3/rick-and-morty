@@ -8,4 +8,4 @@ yarn start
 ```
 
 The app is also deployed in the following site:
-[Rick & Morty App](https://rick-and-morty-app-raul.netlify.app)
+- [Rick & Morty App](https://rick-and-morty-app-raul.netlify.app)
