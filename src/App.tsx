@@ -11,6 +11,7 @@ import EpisodesView from "./views/Episodes/EpisodesView";
 import EpisodeView from "./views/Episodes/EpisodeView";
 import LocationsView from "./views/Locations/LocationsView";
 import LocationView from "./views/Locations/LocationView";
+import "./style/style.css";
 
 const client = new ApolloClient({
   uri: "https://rickandmortyapi.com/graphql",
