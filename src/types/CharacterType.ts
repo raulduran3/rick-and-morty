@@ -8,7 +8,7 @@ export interface Character {
     type: string;
     status: string;
     gender: string;
-    created?: string;
+    created: string;
     origin: {
       name: string;
       id: number;

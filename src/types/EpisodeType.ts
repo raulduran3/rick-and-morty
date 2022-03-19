@@ -7,7 +7,7 @@ export interface Episode {
     air_date: string;
     episode: string;
     characters?: Character[]
-    created?: string
+    created: string
 }
 
 export interface EpisodesData {
