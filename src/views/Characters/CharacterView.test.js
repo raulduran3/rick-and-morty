@@ -1,3 +1,4 @@
+/* eslint-disable testing-library/no-unnecessary-act */
 import React from "react";
 import { MockedProvider } from "@apollo/client/testing";
 import { mount } from "enzyme";
