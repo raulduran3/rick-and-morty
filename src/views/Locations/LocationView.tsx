@@ -55,7 +55,7 @@ const LocationView = () => {
               <Card.Body>{locationData.created}</Card.Body>
             </Card>
           </CardGroup>
-          <Card style={{ alignItems: "center", padding: "1%" }}>
+          <Card className="list">
             <Card.Title>Residents of the location</Card.Title>
             <ListGroup>
               {locationData.residents
@@ -65,7 +65,7 @@ const LocationView = () => {
                       state={{
                         from: { id: character.id, type: "character" },
                       }}
-                      style={{ textDecoration: "none" }}
+                      className="link"
                       key={character.id}
                     >
                       <ListGroup.Item action>{character.name}</ListGroup.Item>

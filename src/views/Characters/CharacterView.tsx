@@ -74,7 +74,7 @@ const CharacterView = () => {
                   state={{
                     from: { id: character.origin.id, type: "location" },
                   }}
-                  style={{ textDecoration: "none" }}
+                  className="link"
                 >
                   <Card.Body>{character.origin.name}</Card.Body>
                 </Link>
@@ -90,7 +90,7 @@ const CharacterView = () => {
                   state={{
                     from: { id: character.location.id, type: "location" },
                   }}
-                  style={{ textDecoration: "none" }}
+                  className="link"
                 >
                   <Card.Body>{character.location.name}</Card.Body>
                 </Link>
@@ -105,14 +105,14 @@ const CharacterView = () => {
               <Card.Body>{character.status}</Card.Body>
             </Card>
           </CardGroup>
-          <Card style={{ width: "50%" }}>
+          <Card className="card-image-parent">
             <Card.Img
-              style={{ marginLeft: "50%" }}
+              className="card-image-child"
               variant="top"
               src={character.image}
             />
           </Card>
-          <Card style={{ alignItems: "center", padding: "1%" }}>
+          <Card className="list">
             <Card.Title>Episodes the character has appeared on</Card.Title>
             <ListGroup>
               {character.episode
@@ -122,7 +122,7 @@ const CharacterView = () => {
                       state={{
                         from: { id: episode.id, type: "episode" },
                       }}
-                      style={{ textDecoration: "none" }}
+                      className="link"
                       key={episode.id}
                     >
                       <ListGroup.Item action>{episode.name}</ListGroup.Item>

@@ -7,7 +7,6 @@ import { CharactersData, CharactersVars } from "../../types/CharacterType";
 import { Info } from "../../types/PaginationType";
 import { TableHeaderType } from "../../types/TableType";
 import { GET_CHARACTERS } from "../../gql/Characters/getCharacters";
-import "../../style/style.css";
 
 const CharactersView = () => {
   const [page, setPage] = useState<number>(1);

@@ -57,7 +57,7 @@ const EpisodeView = () => {
               <Card.Body>{episode.episode}</Card.Body>
             </Card>
           </CardGroup>
-          <Card style={{ alignItems: "center", padding: "1%" }}>
+          <Card className="list">
             <Card.Title>Characters that appeared on the episode</Card.Title>
             <ListGroup>
               {episode.characters
@@ -67,7 +67,7 @@ const EpisodeView = () => {
                       state={{
                         from: { id: character.id, type: "character" },
                       }}
-                      style={{ textDecoration: "none" }}
+                      className="link"
                       key={character.id}
                     >
                       <ListGroup.Item action>{character.name}</ListGroup.Item>

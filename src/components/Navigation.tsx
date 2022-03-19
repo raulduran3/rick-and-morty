@@ -11,25 +11,16 @@ const NavigationComp = () => {
       </header>
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Link style={{ textDecoration: "none", color: "white" }} to="/">
+          <Link className="nav-link" to="/">
             Home
           </Link>
-          <Link
-            style={{ textDecoration: "none", color: "white" }}
-            to="/characters"
-          >
+          <Link className="nav-link" to="/characters">
             Characters
           </Link>
-          <Link
-            style={{ textDecoration: "none", color: "white" }}
-            to="/episodes"
-          >
+          <Link className="nav-link" to="/episodes">
             Episodes
           </Link>
-          <Link
-            style={{ textDecoration: "none", color: "white" }}
-            to="/locations"
-          >
+          <Link className="nav-link" to="/locations">
             Locations
           </Link>
         </Container>
