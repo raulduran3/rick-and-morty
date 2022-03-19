@@ -5,7 +5,7 @@ import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import CardGroup from "react-bootstrap/CardGroup";
 import LoadingComp from "../../components/Loading";
-import { Episode, EpisodeData, EpisodeVars } from "../../types/EpisodeType";
+import { EpisodeData, EpisodeVars } from "../../types/EpisodeType";
 import { GET_EPISODE } from "../../gql/Episodes/getEpisode";
 
 interface LocationState {
@@ -22,7 +22,15 @@ const EpisodeView = () => {
   const { loading, data } = useQuery<EpisodeData, EpisodeVars>(GET_EPISODE, {
     variables: { id },
   });
-  const episode = data?.episode as Episode;
+  const episode = data
+    ? data.episode
+    : {
+        id: 1,
+        name: "no data",
+        air_date: "no data",
+        created: "no data",
+        episode: "no data",
+      };
   return (
     <>
       {loading ? (

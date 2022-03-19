@@ -6,7 +6,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import CardGroup from "react-bootstrap/CardGroup";
 import LoadingComp from "../../components/Loading";
 import { GET_LOCATION } from "../../gql/Locations/getLocation";
-import { Location, LocationData, LocationVars } from "../../types/LocationType";
+import { LocationData, LocationVars } from "../../types/LocationType";
 
 interface LocationState {
   from: {
@@ -22,7 +22,15 @@ const LocationView = () => {
   const { loading, data } = useQuery<LocationData, LocationVars>(GET_LOCATION, {
     variables: { id },
   });
-  const locationData = data?.location as Location;
+  const locationData = data
+    ? data.location
+    : {
+        name: "no data",
+        type: "no data",
+        dimension: "no data",
+        created: "no data",
+        residents: [{ id: null, name: "no data" }],
+      };
   return (
     <>
       {loading ? (
