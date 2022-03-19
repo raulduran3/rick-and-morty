@@ -8,5 +8,40 @@ header {
     position: fixed;
     z-index: 1031;
     right: 50%;
-    top: 45%;  
+    top: 25%;  
   }
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-link:hover {
+  color: #A9A9A9;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.list {
+  align-items: center;
+  padding: 1%;
+}
+
+.home-card {
+  text-align: center;
+  border-color: white;
+}
+
+.home-title {
+  margin-top: 1%;
+}
+
+.card-image-parent {
+  width: 50%;
+}
+
+.card-image-child {
+  margin-left: 50%;
+}
