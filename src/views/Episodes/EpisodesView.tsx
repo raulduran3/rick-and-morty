@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
-import HeaderComp from "../../components/Header";
 import TableComp from "../../components/Table";
 import LoadingComp from "../../components/Loading";
 import PaginationComp from "../../components/Pagination";
-import Container from "react-bootstrap/Container";
 import { GET_EPISODES } from "../../gql/Episodes/getEpisodes";
 import { EpisodesData, EpisodesVars } from "../../types/EpisodeType";
 import { Info } from "../../types/PaginationType";
@@ -24,21 +22,18 @@ function EpisodesView() {
   ];
   return (
     <>
-      <Container fluid className="container">
-        {loading ? (
-          <LoadingComp />
-        ) : (
-          <>
-            <HeaderComp />
-            <TableComp headerData={header} tableEpisodeData={data} />
-            <PaginationComp
-              infoData={info}
-              currentPage={page}
-              setPage={setPage}
-            />
-          </>
-        )}
-      </Container>
+      {loading ? (
+        <LoadingComp />
+      ) : (
+        <>
+          <TableComp headerData={header} tableEpisodeData={data} />
+          <PaginationComp
+            infoData={info}
+            currentPage={page}
+            setPage={setPage}
+          />
+        </>
+      )}
     </>
   );
 }

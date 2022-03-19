@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
-import HeaderComp from "../../components/Header";
 import TableComp from "../../components/Table";
 import PaginationComp from "../../components/Pagination";
-import Container from "react-bootstrap/Container";
 import LoadingComp from "../../components/Loading";
 import { CharactersData, CharactersVars } from "../../types/CharacterType";
 import { Info } from "../../types/PaginationType";
@@ -29,21 +27,18 @@ const CharactersView = () => {
   ];
   return (
     <>
-      <Container fluid className="container">
-        {loading ? (
-          <LoadingComp />
-        ) : (
-          <>
-            <HeaderComp />
-            <TableComp headerData={header} tableCharacterData={data} />
-            <PaginationComp
-              infoData={info}
-              currentPage={page}
-              setPage={setPage}
-            />
-          </>
-        )}
-      </Container>
+      {loading ? (
+        <LoadingComp />
+      ) : (
+        <>
+          <TableComp headerData={header} tableCharacterData={data} />
+          <PaginationComp
+            infoData={info}
+            currentPage={page}
+            setPage={setPage}
+          />
+        </>
+      )}
     </>
   );
 };
