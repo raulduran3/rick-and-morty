@@ -13,7 +13,6 @@ export const GET_EPISODES = gql`
         id
         name
         air_date
-        episode
       }
     }
   }

@@ -13,8 +13,6 @@ export const GET_LOCATIONS = gql`
         id
         name
         type
-        dimension
-        created
       }
     }
   }

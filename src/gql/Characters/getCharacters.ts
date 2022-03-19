@@ -12,11 +12,7 @@ export const GET_CHARACTERS = gql`
       results {
         name
         id
-        image
         species
-        type
-        status
-        gender
         origin {
           name
         }
