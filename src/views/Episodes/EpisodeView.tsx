@@ -5,6 +5,7 @@ import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import CardGroup from "react-bootstrap/CardGroup";
 import LoadingComp from "../../components/Loading";
+import CardComp from "../../components/Card";
 import { EpisodeData, EpisodeVars } from "../../types/EpisodeType";
 import { GET_EPISODE } from "../../gql/Episodes/getEpisode";
 
@@ -44,18 +45,9 @@ const EpisodeView = () => {
                 #{episode.id} {episode.name}
               </Card.Body>
             </Card>
-            <Card>
-              <Card.Title>Air Date</Card.Title>
-              <Card.Body>{episode.air_date}</Card.Body>
-            </Card>
-            <Card>
-              <Card.Title>Created</Card.Title>
-              <Card.Body>{episode.created}</Card.Body>
-            </Card>
-            <Card>
-              <Card.Title>Episode</Card.Title>
-              <Card.Body>{episode.episode}</Card.Body>
-            </Card>
+            <CardComp title="Air Date" body={episode.air_date} />
+            <CardComp title="Created" body={episode.created} />
+            <CardComp title="Episode" body={episode.episode} />
           </CardGroup>
           <Card className="list">
             <Card.Title>Characters that appeared on the episode</Card.Title>

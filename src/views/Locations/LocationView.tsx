@@ -5,6 +5,7 @@ import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import CardGroup from "react-bootstrap/CardGroup";
 import LoadingComp from "../../components/Loading";
+import CardComp from "../../components/Card";
 import { GET_LOCATION } from "../../gql/Locations/getLocation";
 import { LocationData, LocationVars } from "../../types/LocationType";
 
@@ -38,22 +39,10 @@ const LocationView = () => {
       ) : (
         <>
           <CardGroup>
-            <Card>
-              <Card.Title>Location Name</Card.Title>
-              <Card.Body id={"test"}>{locationData.name}</Card.Body>
-            </Card>
-            <Card>
-              <Card.Title>Type</Card.Title>
-              <Card.Body>{locationData.type}</Card.Body>
-            </Card>
-            <Card>
-              <Card.Title>Dimension</Card.Title>
-              <Card.Body>{locationData.dimension}</Card.Body>
-            </Card>
-            <Card>
-              <Card.Title>Created</Card.Title>
-              <Card.Body>{locationData.created}</Card.Body>
-            </Card>
+            <CardComp title="Location Name" body={locationData.name} />
+            <CardComp title="Type" body={locationData.type} />
+            <CardComp title="Dimension" body={locationData.dimension} />
+            <CardComp title="Created" body={locationData.created} />
           </CardGroup>
           <Card className="list">
             <Card.Title>Residents of the location</Card.Title>
