@@ -8,7 +8,6 @@ import { BrowserRouter } from "react-router-dom";
 import LocationView from "./LocationView";
 import LoadingComp from "../../components/Loading";
 import { GET_LOCATION } from "../../gql/Locations/getLocation";
-import Card from "react-bootstrap/Card";
 
 const mockLocationData = [
   {
@@ -174,7 +173,5 @@ it("renders name of Earth (C-137) inside Card component", async () => {
 
   await act(() => wait(0));
   wrapper.update();
-  expect(wrapper.find(Card.Body).find("#test").find(Card.Body).text()).toBe(
-    "Earth (C-137)"
-  );
+  expect(wrapper.find("div.card-body").at(0).text()).toBe("Earth (C-137)");
 });

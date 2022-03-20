@@ -8,7 +8,6 @@ import { BrowserRouter } from "react-router-dom";
 import CharacterView from "./CharacterView";
 import LoadingComp from "../../components/Loading";
 import { GET_CHARACTER } from "../../gql/Characters/getCharacter";
-import Card from "react-bootstrap/Card";
 
 const mockCharacterData = [
   {
@@ -281,7 +280,5 @@ it("renders name of Rick Sanchez inside Card component", async () => {
 
   await act(() => wait(0));
   wrapper.update();
-  expect(wrapper.find(Card.Body).find("#test").find(Card.Body).text()).toBe(
-    "Rick Sanchez"
-  );
+  expect(wrapper.find("div.card-body").at(0).text()).toBe("Rick Sanchez");
 });

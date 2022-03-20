@@ -8,7 +8,6 @@ import { BrowserRouter } from "react-router-dom";
 import EpisodeView from "./EpisodeView";
 import LoadingComp from "../../components/Loading";
 import { GET_EPISODE } from "../../gql/Episodes/getEpisode";
-import Card from "react-bootstrap/Card";
 
 const mockEpisodeData = [
   {
@@ -142,7 +141,5 @@ it("renders name of #1 Pilot inside Card component", async () => {
 
   await act(() => wait(0));
   wrapper.update();
-  expect(wrapper.find(Card.Body).find("#test").find(Card.Body).text()).toBe(
-    "#1 Pilot"
-  );
+  expect(wrapper.find("div.card-body").at(0).text()).toBe("#1 Pilot");
 });
