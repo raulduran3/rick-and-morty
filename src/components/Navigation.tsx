@@ -14,13 +14,13 @@ const NavigationComp = () => {
           <Link className="nav-link" to="/">
             Home
           </Link>
-          <Link className="nav-link" to="/characters">
+          <Link className="nav-link" to={`/characters/${1}`}>
             Characters
           </Link>
-          <Link className="nav-link" to="/episodes">
+          <Link className="nav-link" to={`/episodes/${1}`}>
             Episodes
           </Link>
-          <Link className="nav-link" to="/locations">
+          <Link className="nav-link" to={`/locations/${1}`}>
             Locations
           </Link>
         </Container>
