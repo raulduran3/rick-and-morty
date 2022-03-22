@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { useQuery } from "@apollo/client";
+import { useParams } from "react-router-dom";
 import PaginationComp from "../../components/Pagination";
 import TableComp from "../../components/Table";
 import LoadingComp from "../../components/Loading";
@@ -9,7 +10,8 @@ import { Info } from "../../types/PaginationType";
 import { TableHeaderType } from "../../types/TableType";
 
 function LocationsView() {
-  const [page, setPage] = useState<number>(1);
+  const params = useParams();
+  const page: number = parseInt(params.page ?? "");
   const { loading, data } = useQuery<LocationsData, LocationsVars>(
     GET_LOCATIONS,
     {
@@ -30,11 +32,7 @@ function LocationsView() {
       ) : (
         <>
           <TableComp headerData={header} tableLocationData={data} />
-          <PaginationComp
-            infoData={info}
-            currentPage={page}
-            setPage={setPage}
-          />
+          <PaginationComp infoData={info} path="locations" currentPage={page} />
         </>
       )}
     </>

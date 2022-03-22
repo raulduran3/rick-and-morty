@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { useQuery } from "@apollo/client";
+import { useParams } from "react-router-dom";
 import TableComp from "../../components/Table";
 import PaginationComp from "../../components/Pagination";
 import LoadingComp from "../../components/Loading";
@@ -9,7 +10,8 @@ import { TableHeaderType } from "../../types/TableType";
 import { GET_CHARACTERS } from "../../gql/Characters/getCharacters";
 
 const CharactersView = () => {
-  const [page, setPage] = useState<number>(1);
+  const params = useParams();
+  const page: number = parseInt(params.page ?? "");
   const { loading, data } = useQuery<CharactersData, CharactersVars>(
     GET_CHARACTERS,
     {
@@ -33,8 +35,8 @@ const CharactersView = () => {
           <TableComp headerData={header} tableCharacterData={data} />
           <PaginationComp
             infoData={info}
+            path="characters"
             currentPage={page}
-            setPage={setPage}
           />
         </>
       )}
