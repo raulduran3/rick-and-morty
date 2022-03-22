@@ -26,12 +26,12 @@ function App() {
           <NavigationComp />
           <Routes>
             <Route path="/" element={<HomeView />} />
-            <Route path="/characters" element={<CharactersView />} />
-            <Route path="/character" element={<CharacterView />} />
-            <Route path="/episodes" element={<EpisodesView />} />
-            <Route path="/episode" element={<EpisodeView />} />
-            <Route path="/locations" element={<LocationsView />} />
-            <Route path="/location" element={<LocationView />} />
+            <Route path="/characters/:page" element={<CharactersView />} />
+            <Route path="/character/:id" element={<CharacterView />} />
+            <Route path="/episodes/:page" element={<EpisodesView />} />
+            <Route path="/episode/:id" element={<EpisodeView />} />
+            <Route path="/locations/:page" element={<LocationsView />} />
+            <Route path="/location/:id" element={<LocationView />} />
           </Routes>
         </BrowserRouter>
       </Container>
