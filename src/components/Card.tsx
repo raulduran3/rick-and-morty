@@ -18,13 +18,7 @@ const CardComp = ({ title, body, location, id }: CardProps) => {
           {body === "unknown" ? (
             <Card.Body>{body}</Card.Body>
           ) : (
-            <Link
-              to="/location"
-              state={{
-                from: { id: id, type: "location" },
-              }}
-              className="link"
-            >
+            <Link to={`/location/${id}`} className="link">
               <Card.Body>{body}</Card.Body>
             </Link>
           )}
