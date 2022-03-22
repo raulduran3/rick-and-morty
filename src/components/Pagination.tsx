@@ -2,22 +2,20 @@ import React from "react";
 import CardGroup from "react-bootstrap/CardGroup";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
+import { useNavigate } from "react-router-dom";
 import { Info } from "../types/PaginationType";
 
 interface PaginationProps {
   infoData?: Info;
+  path: string;
   currentPage: number;
-  setPage: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const PaginationComp = ({
-  infoData,
-  currentPage,
-  setPage,
-}: PaginationProps) => {
+const PaginationComp = ({ infoData, path, currentPage }: PaginationProps) => {
+  const navigate = useNavigate();
   const info = infoData as Info;
   return (
-    <CardGroup>
+    <CardGroup className="pagination">
       <Card>
         <Card.Text>
           Showing <strong>{currentPage}</strong> of{" "}
@@ -26,14 +24,23 @@ const PaginationComp = ({
       </Card>
       <Card>
         {currentPage >= 2 && (
-          <Button variant="dark" size="sm" onClick={() => setPage(info.prev)}>
+          <Button
+            className="link"
+            variant="dark"
+            size="sm"
+            onClick={() => navigate(`/${path}/${info.prev}`)}
+          >
             Previous
           </Button>
         )}
       </Card>
       <Card>
         {currentPage < info.pages && (
-          <Button variant="dark" size="sm" onClick={() => setPage(info.next)}>
+          <Button
+            variant="dark"
+            size="sm"
+            onClick={() => navigate(`/${path}/${info.next}`)}
+          >
             Next
           </Button>
         )}
