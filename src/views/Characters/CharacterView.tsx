@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
 import ListGroup from "react-bootstrap/ListGroup";
@@ -9,17 +9,9 @@ import { GET_CHARACTER } from "../../gql/Characters/getCharacter";
 import { CharacterData, CharacterVars } from "../../types/CharacterType";
 import CardComp from "../../components/Card";
 
-interface LocationState {
-  from: {
-    id: number;
-    type: string;
-  };
-}
-
 const CharacterView = () => {
-  const location = useLocation();
-  const { from } = location.state as LocationState;
-  const id: number = from.id;
+  const params = useParams();
+  const id: number = parseInt(params.id ?? "");
   const { loading, data } = useQuery<CharacterData, CharacterVars>(
     GET_CHARACTER,
     {
@@ -81,10 +73,7 @@ const CharacterView = () => {
               {character.episode
                 ? character.episode.map((episode) => (
                     <Link
-                      to="/episode"
-                      state={{
-                        from: { id: episode.id, type: "episode" },
-                      }}
+                      to={`/episode/${episode.id}`}
                       className="link"
                       key={episode.id}
                     >
