@@ -37,12 +37,7 @@ const TableComp = ({
             <td>{character.origin.name}</td>
             <td>{character.location.name}</td>
             <td>
-              <Link
-                to="/character"
-                state={{
-                  from: { id: character.id, type: "character" },
-                }}
-              >
+              <Link to={`/character/${character.id}`}>
                 <Button variant="light">View</Button>
               </Link>
             </td>
@@ -55,12 +50,7 @@ const TableComp = ({
             <td className="location">{location.name}</td>
             <td>{location.type}</td>
             <td>
-              <Link
-                to="/location"
-                state={{
-                  from: { id: location.id, type: "location" },
-                }}
-              >
+              <Link to={`/location/${location.id}`}>
                 <Button variant="light">View</Button>
               </Link>
             </td>
@@ -73,12 +63,7 @@ const TableComp = ({
             <td className="episode">{episode.name}</td>
             <td>{episode.air_date}</td>
             <td>
-              <Link
-                to="/episode"
-                state={{
-                  from: { id: episode.id, type: "episode" },
-                }}
-              >
+              <Link to={`/episode/${episode.id}`}>
                 <Button variant="light">View</Button>
               </Link>
             </td>
