@@ -106,8 +106,8 @@ const mockEpisodeData = [
 
 jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
-  useLocation: () => ({
-    state: { from: { id: 1, type: "episode" } },
+  useParams: () => ({
+    id: 1,
   }),
 }));
 

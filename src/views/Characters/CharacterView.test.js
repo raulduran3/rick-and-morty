@@ -245,8 +245,8 @@ const mockCharacterData = [
 
 jest.mock("react-router-dom", () => ({
   ...jest.requireActual("react-router-dom"),
-  useLocation: () => ({
-    state: { from: { id: 1, type: "character" } },
+  useParams: () => ({
+    id: 1,
   }),
 }));
 

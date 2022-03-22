@@ -36,6 +36,13 @@ const mockEpisodesData = [
   },
 ];
 
+jest.mock("react-router-dom", () => ({
+  ...jest.requireActual("react-router-dom"),
+  useParams: () => ({
+    page: 1,
+  }),
+}));
+
 it("renders the loading component when loading", () => {
   let wrapper;
   act(() => {
